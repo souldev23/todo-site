@@ -1,13 +1,14 @@
-import { td } from "../models/todo";
+import { v4 as uuid } from 'uuid';
+export class ToDo{
 
-cons
-
-const state = {
-    todos: [
-        new td('Piedra del alma'),
-        new td('Piedra de la mente'),
-        new td('Piedra del poder'),
-        new td('Piedra del tiempo')
-    ],
-    filter: 'all'
+    /**
+     * 
+     * @param {String} description 
+     */
+    constructor(description){
+        this.id = uuid();
+        this.description = description;
+        this.done = false;
+        this.createdAt = new Date();
+    }
 }
